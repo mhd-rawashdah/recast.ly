@@ -3,7 +3,13 @@ var VideoList = (props) => (
     {/* make a map to iterate over the videos (array of object that pass in the props) and call VideoListEntry component 
     to show the list of videos */}
     {props.videos.map((video) => 
-    	<VideoListEntry video={video} key={video.id.videoId} />
+    	<VideoListEntry
+    	 video={video}
+    	{/* make key for each child in VideoList*/}
+    	 key ={video.id.videoId}
+    	{/* pass handleVideoFunction to VideoListEntry to apply it with onClick on the title so we recived it from the the App */}
+    	 handleVideoChange = {props.handleVideoChange}
+    	 />
     	)
     }
   </div>
